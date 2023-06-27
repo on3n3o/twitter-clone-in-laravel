@@ -1,57 +1,52 @@
-export default function Tweet() {
+export default function Tweet({creatorImg, creatorName, creatorAlias, createdAt, content, mediaImg, mediaVideo = null, mediaVideoFormat = null}) {
     return (
         <>
             <div class="flex flex-row border-b border-b-zinc-600 pt-2 ">
                 <div class="pl-4">
                     <img
                         class="rounded-full"
-                        width="128"
-                        height="128"
-                        src="/img/avatar_400x400.jpg"
+                        width="48"
+                        height="48"
+                        src={creatorImg}
                     />
                 </div>
-                <div class="px-4">
-                    <div>
-                        <span>Fabio Esparanzo </span>
+                <div class="px-4 w-full">
+                    <div class="text-sm">
+                        <span class="font-medium">{creatorName} </span>
                         <span class="text-blue-400">
                             <i class="fa-solid fa-square-check"></i>{" "}
                         </span>
-                        <span class="text-zinc-600">@FabrizioRomano · 5h</span>
+                        <span class="text-zinc-500">@{creatorAlias} · {createdAt}</span>
                     </div>
                     <span class="leading-none">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Fusce vehicula placerat sodales. Duis varius, magna a
-                        pellentesque fermentum, enim arcu pharetra leo, vitae
-                        elementum metus tortor sed justo. Pellentesque rutrum
-                        vulputate est ut blandit. Suspendisse pharetra sapien eu
-                        nec.
+                        {content}
                     </span>
 
-                    <div class="">
+                    {mediaVideo && <div class="mt-2">
                         <video class="rounded-2xl" controls autoPlay loop>
-                            <source src="/video/test.mp4" type="video/mp4" />
+                            <source src={mediaVideo} type={mediaVideoFormat} />
                         </video>
-                    </div>
+                    </div>}
 
                     <div class="flex flex-grow py-2">
-                        <div class="w-1/6 text-zinc-600">
-                            <i class="fa-regular fa-comment" />
-                            <span class="pl-2">666</span>
+                        <div class=" flex-1 text-zinc-600 hover:text-blue-400 hover:cursor-pointer transition delay-100 duration-100">
+                            <i class="fa-regular fa-comment hover:bg-blue-950 rounded-full p-2 transition delay-100 duration-100" />
+                            <span class="text-sm pl-2">666</span>
                         </div>
-                        <div class="w-1/6 text-zinc-600">
-                            <i class="fa-solid fa-repeat" />
-                            <span class="pl-2">9,996</span>
+                        <div class=" flex-1 text-zinc-600 hover:text-green-400 hover:cursor-pointer transition delay-100 duration-100">
+                            <i class="fa-solid fa-repeat hover:bg-green-950 rounded-full p-2 transition delay-100 duration-100" />
+                            <span class="text-sm pl-2">9,996</span>
                         </div>
-                        <div class="w-1/6 text-zinc-600">
-                            <i class="fa-regular fa-heart" />
-                            <span class="pl-2">37.9k</span>
+                        <div class=" flex-1 text-zinc-600 hover:text-red-400 hover:cursor-pointer transition delay-100 duration-100">
+                            <i class="fa-regular fa-heart hover:bg-red-950 rounded-full p-2 transition delay-100 duration-100" />
+                            <span class="text-sm pl-2">37.9k</span>
                         </div>
-                        <div class="w-1/6 text-zinc-600">
-                            <i class="fa-solid fa-chart-simple" />
-                            <span class="pl-2">499.1k</span>
+                        <div class=" flex-1 text-zinc-600 hover:text-blue-400 hover:cursor-pointer transition delay-100 duration-100">
+                            <i class="fa-solid fa-chart-simple hover:bg-blue-950 rounded-full p-2 transition delay-100 duration-100" />
+                            <span class="text-sm pl-2">499.1k</span>
                         </div>
-                        <div class="w-1/6 text-zinc-600">
-                            <i class="fa-solid fa-upload" />
+                        <div class=" flex-1 text-zinc-600 hover:text-blue-400 hover:cursor-pointer transition delay-100 duration-100">
+                            <i class="fa-solid fa-upload hover:bg-blue-950 rounded-full p-2 transition delay-100 duration-100" />
                         </div>
                     </div>
                 </div>

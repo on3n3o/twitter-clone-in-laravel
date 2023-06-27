@@ -3,7 +3,7 @@ export default function FooterPopup() {
         <>
             <div class="w-full bg-blue-400 text-white absolute bottom-0 left-0 flex flex-col justify-center align-middle">
                 <div class="w-full h-16 flex justify-center align-middle text-center">
-                    <div class="w-4/12 flex collapse sm:visible">
+                    <div class="w-2/12 flex collapse sm:visible">
                         <div>
                             <h1 class="text-2xl font-medium">
                                 Don't miss what's happening
@@ -22,8 +22,8 @@ export default function FooterPopup() {
                         </button>
                     </div>
                 </div>
-                <div class="h-48 bg-white text-black flex md:flex-row flex-col justify-center items-center">
-                    <div class="md:w-4/12 w-full">
+                <div class="h-40 bg-white text-black flex md:flex-row flex-col justify-center items-center">
+                    <div class="md:w-6/12 w-full">
                         <p class="text-base font-semibold">
                             Did someone say … cock ies? gulp!?
                         </p>
