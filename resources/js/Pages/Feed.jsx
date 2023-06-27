@@ -18,7 +18,7 @@ export default function Feed() {
                 <RightSidebar />
             </div>
 
-            {/* <FooterPopup /> */}
+            <FooterPopup />
         </>
     );
 }

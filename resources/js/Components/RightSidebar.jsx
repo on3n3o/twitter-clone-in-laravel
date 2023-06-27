@@ -1,8 +1,8 @@
 export default function RightSidebar() {
     return (
         <>
-            <div class="min-h-screen border-l border-zinc-700">
-                <div class="border border-zinc-700 p-4 m-4 rounded-2xl w-full">
+            <div class="min-h-screen  border-l border-zinc-700  w-2/12">
+                <div class="border border-zinc-700 p-4 my-2 mx-6 rounded-2xl">
                     <p class="text-xl font-bold">New to Twatter?</p>
                     <p class="text-sm text-zinc-500 py-2">
                         Sign up to get your own personalized timeline!
