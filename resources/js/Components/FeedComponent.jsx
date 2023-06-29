@@ -3,13 +3,13 @@ import Tweet from "./Tweet";
 export default function FeedComponent() {
     return (
         <>
-            <div class="max-h-screen overflow-y-scroll max-w-xl relative w-full">
+            <div class="max-h-screen overflow-y-scroll max-w-[37rem] relative w-full">
                 <div style={{
                     'background': 'rgba(0, 0, 0, 0.7)',
                     'box-shadow': '0 4px 30px rgba(0, 0, 0, 0.1)',
                     'backdrop-filter': 'blur(8px)',
                     '-webkit-backdrop-filter': 'blur(8px)',
-                }} class="h-14 px-4 flex items-center fixed top-0 w-[576px] bg-black">
+                }} class="h-14 px-4 flex items-center fixed top-0 w-[590px] bg-black">
                     <p class="flex-grow font-semibold text-xl text-zinc-300">Explore</p>
                     <p>
                         <i class="fa fa-gear" />

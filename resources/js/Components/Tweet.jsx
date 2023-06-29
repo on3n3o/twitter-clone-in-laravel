@@ -1,7 +1,16 @@
-export default function Tweet({creatorImg, creatorName, creatorAlias, createdAt, content, mediaImg, mediaVideo = null, mediaVideoFormat = null}) {
+export default function Tweet({
+    creatorImg,
+    creatorName,
+    creatorAlias,
+    createdAt,
+    content,
+    mediaImg,
+    mediaVideo = null,
+    mediaVideoFormat = null,
+}) {
     return (
         <>
-            <div class="flex flex-row border-b border-b-zinc-600 pt-2 ">
+            <div class="flex flex-row border-b border-b-zinc-800 pt-2 ">
                 <div class="pl-4">
                     <img
                         class="rounded-full"
@@ -11,22 +20,30 @@ export default function Tweet({creatorImg, creatorName, creatorAlias, createdAt,
                     />
                 </div>
                 <div class="px-4 w-full">
-                    <div class="text-sm">
-                        <span class="font-medium">{creatorName} </span>
-                        <span class="text-blue-400">
-                            <i class="fa-solid fa-square-check"></i>{" "}
-                        </span>
-                        <span class="text-zinc-500">@{creatorAlias} · {createdAt}</span>
+                    <div class="flex ">
+                        <div class="text-sm flex-1">
+                            <span class="font-medium">{creatorName} </span>
+                            <span class="text-blue-400">
+                                <i class="fa-solid fa-square-check"></i>{" "}
+                            </span>
+                            <span class="text-zinc-500">
+                                @{creatorAlias} · {createdAt}
+                            </span>
+                        </div>
+                        <i class="text-zinc-500 fa fa-ellipsis" />
                     </div>
-                    <span class="leading-none">
-                        {content}
-                    </span>
+                    <span class="leading-none">{content}</span>
 
-                    {mediaVideo && <div class="mt-2">
-                        <video class="rounded-2xl" controls autoPlay loop>
-                            <source src={mediaVideo} type={mediaVideoFormat} />
-                        </video>
-                    </div>}
+                    {mediaVideo && (
+                        <div class="mt-2">
+                            <video class="rounded-2xl" controls autoPlay loop>
+                                <source
+                                    src={mediaVideo}
+                                    type={mediaVideoFormat}
+                                />
+                            </video>
+                        </div>
+                    )}
 
                     <div class="flex flex-grow py-2">
                         <div class=" flex-1 text-zinc-600 hover:text-blue-400 hover:cursor-pointer transition delay-100 duration-100">
