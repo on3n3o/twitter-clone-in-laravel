@@ -17,20 +17,25 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
-
-Route::get('/feed', function () {
-    return Inertia::render('Feed');
-});
-
-Route::get('/homepage', function () {
+    if (auth()->check()) {
+        return redirect('/home');
+    }
+    Inertia::share('appName', config('app.name'));
     return Inertia::render('Homepage');
+
+    // return Inertia::render('Welcome', [
+    //     'canLogin' => Route::has('login'),
+    //     'canRegister' => Route::has('register'),
+    //     'laravelVersion' => Application::VERSION,
+    //     'phpVersion' => PHP_VERSION,
+    // ]);
+});
+
+Route::get('/home', function () {
+    if (!auth()->check()) {
+        return redirect('/');
+    }
+    return Inertia::render('Feed');
 });
 
 Route::get('/dashboard', function () {
