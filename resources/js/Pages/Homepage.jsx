@@ -1,18 +1,18 @@
 import CookiesPopup from "@/Components/CookiesPopup";
 import FooterPopup from "@/Components/FooterPopup";
-import { Head, usePage } from "@inertiajs/react";
+import { Head, Link, usePage } from "@inertiajs/react";
+import Footer from "./Homepage/Footer";
 
-export default function Homepage({ children }) {
-    const { appName } = usePage().props;
+export default function Homepage({ appName, siteUrl }) {
     return (
         <>
             <Head>
-                <title>. It's what's happening</title>
+                <title inertia>It's what's happening</title>
             </Head>
             <div className="flex flex-col w-full h-screen">
                 <div className="flex h-full">
                     <div
-                        className=" bg-blue-400 items-center justify-center flex flex-1"
+                        className=" bg-black items-center justify-center flex flex-1"
                         style={{
                             "backgroundImage": "url(img/background-sebastiaan-stam.jpg)",
                             "backgroundRepeat": "none",
@@ -77,31 +77,7 @@ export default function Homepage({ children }) {
                     </div>
                 </div>
 
-                <div className="bg-red-400">
-                    <div className="w-full h-10 bg-black flex justify-center items-center text-zinc-500 text-sm">
-                        <div className="flex justify-center items-center gap-4 z-10">
-                            <div>About</div>
-                            <div>Help center</div>
-                            <div>Terms of Service</div>
-                            <div>Privacy Policy</div>
-                            <div>Cookie Policy</div>
-                            <div>Accessibility</div>
-                            <div>Ads info</div>
-                            <div>Blog</div>
-                            <div>Status</div>
-                            <div>Carrers</div>
-                            <div>Brand Resources</div>
-                            <div>Advertising</div>
-                            <div>Marketing</div>
-                            <div>Twitter for Business</div>
-                            <div>Developers</div>
-                            <div>Directory</div>
-                            <div>Settings</div>
-                            <div>© 2023 XYZ Corp.</div>
-                        </div>
-                    </div>
-                    {/* <CookiesPopup /> */}
-                </div>
+                <Footer appName={appName} />
             </div>
         </>
     );

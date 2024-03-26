@@ -20,8 +20,10 @@ Route::get('/', function () {
     if (auth()->check()) {
         return redirect('/home');
     }
-    Inertia::share('appName', config('app.name'));
-    return Inertia::render('Homepage');
+    return Inertia::render('Homepage', [
+        'siteUrl' => config('app.url'),
+        'appName' => config('app.name'),
+    ]);
 
     // return Inertia::render('Welcome', [
     //     'canLogin' => Route::has('login'),
