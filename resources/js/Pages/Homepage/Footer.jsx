@@ -27,7 +27,7 @@ export default function Footer({ appName }) {
             <div className="w-full h-10 bg-black flex justify-center items-center text-zinc-500 text-sm">
                 <div className="flex justify-center items-center gap-4 z-10">
                     {footerItems.map((item, index) => {
-                        return <FooterItem url={item.url} name={item.name} />;
+                        return <FooterItem key={index} url={item.url} name={item.name} />;
                     })}
                     <div>© 2023 XYZ Corp.</div>
                 </div>
