@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function Homepage({ appName, siteUrl }) {
     const { t } = useTranslation();
-    const [showLoginModal, setShowLoginModal] = useState(false);
+    const [showLoginModal, setShowLoginModal] = useState(true);
     return (
         <>
             <Head>

@@ -9,6 +9,7 @@ import { initReactI18next } from "react-i18next";
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import XHR from "i18next-http-backend"
+import { StrictMode } from "react";
 
 const appName =
     window.document.getElementsByTagName("title")[0]?.innerText || "Laravel";
@@ -33,7 +34,7 @@ createInertiaApp({
             },
         });
 
-        root.render(<App {...props}  />);
+        root.render(<StrictMode><App {...props}  /></StrictMode>);
     },
     progress: {
         color: "#4B5563",
