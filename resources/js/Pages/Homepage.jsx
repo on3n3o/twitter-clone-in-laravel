@@ -5,10 +5,12 @@ import Footer from "./Homepage/Footer";
 import { useTranslation } from "react-i18next";
 import LoginModal from "./Homepage/LoginModal";
 import { useState } from "react";
+import RegisterModal from "./Homepage/RegisterModal";
 
 export default function Homepage({ appName, siteUrl }) {
     const { t } = useTranslation();
-    const [showLoginModal, setShowLoginModal] = useState(true);
+    const [showLoginModal, setShowLoginModal] = useState(false);
+    const [showRegisterModal, setShowRegisterModal] = useState(false);
     return (
         <>
             <Head>
@@ -52,7 +54,7 @@ export default function Homepage({ appName, siteUrl }) {
                                     <span className="text-sm">{t("or")}</span>
                                     <div className="h-0 w-full border-b border-zinc-800" />
                                 </div>
-                                <button onClick={() => setShowLoginModal(true)} className="bg-blue-400 text-white hover:bg-blue-500 font-bold rounded-full  w-full py-[0.4rem]">
+                                <button onClick={() => setShowRegisterModal(true)} className="bg-blue-400 text-white hover:bg-blue-500 font-bold rounded-full  w-full py-[0.4rem]">
                                     {t("Create account")}
                                 </button>
                                 <div className="w-full text-zinc-500 text-xs">
@@ -74,14 +76,15 @@ export default function Homepage({ appName, siteUrl }) {
                                 <p className="font-bold pt-10">
                                     {t("Already have an account")}?
                                 </p>
-                                <button className="bg-black border border-zinc-500 text-blue-500  font-bold rounded-full  w-full py-[0.4rem]">
+                                <button onClick={() => setShowLoginModal(true)} className="bg-black border border-zinc-500 text-blue-500  font-bold rounded-full  w-full py-[0.4rem]">
                                     {t("Sign in")}
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <LoginModal show={showLoginModal} setShow={(value) => setShowLoginModal(value)}/>
+                <LoginModal appName={appName} show={showLoginModal} setShow={(value) => setShowLoginModal(value)}/>
+                <RegisterModal show={showRegisterModal} setShow={(value) => setShowRegisterModal(value)}/>
                 <Footer appName={appName} />
             </div>
         </>
