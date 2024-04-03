@@ -3,7 +3,7 @@ import React from "react";
 export default function LeftSidebarWithImage() {
     return (
         <div
-            className=" bg-black items-center justify-center flex flex-1"
+            className="bg-black items-center justify-center hidden lg:flex flex-1"
             style={{
                 backgroundImage: "url(img/background-sebastiaan-stam.jpg)",
                 backgroundRepeat: "none",

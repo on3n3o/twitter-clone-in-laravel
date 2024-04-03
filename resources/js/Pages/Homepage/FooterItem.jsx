@@ -1,9 +1,11 @@
 import { Link } from "@inertiajs/react";
 
-export default function FooterItem({ url, name }) {
+export default function FooterItem({ url, name, className }) {
     return (
         <div>
-            <Link href={url}>{name}</Link>
+            <Link className={className} href={url}>
+                {name}
+            </Link>
         </div>
     );
 }

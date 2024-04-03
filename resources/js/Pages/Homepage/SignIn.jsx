@@ -9,7 +9,7 @@ export default function SignIn({ setShowLoginModal }) {
             <p className="font-bold pt-10">{t("Already have an account")}?</p>
             <button
                 onClick={() => setShowLoginModal(true)}
-                className="bg-black border border-zinc-500 text-blue-500  font-bold rounded-full  w-full py-[0.4rem]"
+                className="bg-black border border-zinc-500 text-blue-500 font-bold rounded-full w-full py-[0.4rem]"
             >
                 {t("Sign in")}
             </button>
